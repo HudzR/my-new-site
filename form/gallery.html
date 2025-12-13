@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Installation Gallery | TV Wall Mounting Calgary</title>
+    <link rel="stylesheet" href="gallery-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Removed duplicate stylesheet link -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TV Wall Mounting Calgary</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="galery.html" class="active">Gallery</a></li>
+                <li><a href="form.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-container">
+        <h1>Our TV Installation Gallery</h1>
+        <p class="gallery-description">Browse our recent TV mounting projects in Calgary.</p>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Installations</button>
+            <button class="filter-btn" data-filter="living-room">Living Room</button>
+            <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+            <button class="filter-btn" data-filter="fireplace">Above Fireplace</button>
+            <!-- Removed Corner Mounts filter button -->
+        </div>
+        
+        <div class="photo-gallery">
+            <!-- Photos will be added dynamically by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-img" id="lightbox-img">
+        <!-- Removed lightbox-caption div -->
+        <a class="prev-btn">&#10094;</a>
+        <a class="next-btn">&#10095;</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 TV Wall Mounting Calgary. All rights reserved.</p>
+    </footer>
+
+    <script src="gallery.js"></script>
+</body>
+</html>

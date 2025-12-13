@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Mounting Quote</title>
+    <link rel="stylesheet" href="form-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Get a Free Quote</h1>
+        <p class="subtitle">Get a free, no-obligation quote for your TV wall mounting installation.<br>
+        Please fill out the form below, and we'll get back to you shortly.</p>
+        
+        <form id="quoteForm">
+            <div class="form-group">
+                <label for="name" class="required">Your name</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error-message" id="name-error">Please enter your name</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone" class="required">Phone number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error-message" id="phone-error">Please enter your phone number</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="tvSize" class="required">TV size (inches)</label>
+                <input type="text" id="tvSize" name="tvSize" required>
+                <div class="error-message" id="tvSize-error">Please enter your TV size</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="wallType" class="required">Wall type</label>
+                <select id="wallType" name="wallType" required>
+                    <option value="">-- Select wall type --</option>
+                    <option value="Drywall">Drywall</option>
+                    <option value="Wooden">Wooden</option>
+                    <option value="Tile">Tile</option>
+                    <option value="Concrete">Concrete</option>
+                    <option value="Brick">Brick</option>
+                </select>
+                <div class="error-message" id="wallType-error">Please select wall type</div>
+            </div>
+            
+            <!-- Новое поле: Under fireplace - добавлено после Wall type -->
+            <div class="form-group">
+                <label>Installation under fireplace?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="fireplaceYes" name="underFireplace" value="Yes">
+                        <label for="fireplaceYes" style="font-weight: normal;">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="fireplaceNo" name="underFireplace" value="No" checked>
+                        <label for="fireplaceNo" style="font-weight: normal;">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="bracketType" class="required">Bracket type</label>
+                <select id="bracketType" name="bracketType" required>
+                    <option value="">-- Select bracket type --</option>
+                    <option value="Tilting Mount">Tilting Mount</option>
+                    <option value="Full Motion Mount">Full Motion Mount</option>
+                    <option value="None - I already have a Mount">None - I already have a Mount</option>
+                </select>
+                <div class="error-message" id="bracketType-error">Please select bracket type</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="address" class="required">Your address</address></label>
+                <input type="text" id="address" name="address" placeholder="Address or postal code" required>
+                <div class="hint">Could be a postal code (we need this to calculate service cost)</div>
+                <div class="error-message" id="address-error">Please enter your location</div>
+            </div>
+            
+            <div class="form-group">
+                <label>Cable management needed?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="cableInWall" name="cableManagement" value="In Wall">
+                        <label for="cableInWall" style="font-weight: normal;">In Wall</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cableChannel" name="cableManagement" value="Cable Channel">
+                        <label for="cableChannel" style="font-weight: normal;">Cable Channel</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="cableNo" name="cableManagement" value="No" checked>
+                        <label for="cableNo" style="font-weight: normal;">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Additional services needed?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="servicesYes" name="additionalServices" value="Yes">
+                        <label for="servicesYes" style="font-weight: normal;">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="servicesNo" name="additionalServices" value="No" checked>
+                        <label for="servicesNo" style="font-weight: normal;">No</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" id="submitBtn">Get Free Quote</button>
+        </form>
+        
+        <div class="success-message" id="successMessage">
+            <h3>Thank you for your submission!</h3>
+            <p>We've received your request and will contact you shortly with a quote.</p>
+        </div>
+    </div>
+
+<script src="form-script.js"></script>
+</body>
+</html>

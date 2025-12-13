@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional TV Mounting Services in Calgary. Safe and secure TV wall mounting for homes and businesses. Affordable TV installation in Calgary.">
+    <meta name="keywords" content="TV installation Calgary, TV mounting Calgary, TV wall mounting Calgary, Professional TV installation Calgary, TV mounting services Calgary, TV setup Calgary, Flat screen TV installation Calgary, TV mounting near me, TV installation services near me, Affordable TV mounting Calgary">
+    <meta name="author" content="TV Wall Mounting Calgary">
+    <title>Professional TV Mounting Services in Calgary</title>
+    <link class="round-icon" rel="icon" type="image/png" href="images/icons/icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Додаткові стилі для TV блоків */
+        .tv-block {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .tv-block-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #4a6bdf;
+            padding-bottom: 8px;
+        }
+        
+        .tv-blocks-container {
+            margin-top: 20px;
+        }
+        
+        .conditional-field {
+            margin-top: 15px;
+        }
+        
+        #allTVBlocksContainer {
+            margin-top: 20px;
+        }
+        
+        #numberOfTVsGroup {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="container">
+        <nav>
+            <!-- Посилання-логотип з фоном через CSS -->
+            <a href="index.html" class="logo-link" aria-label="Go to Homepage - TV Wall Mounting"></a>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Get Quote</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <div class="container contact-container">
+        <h1 class="contact-title">Get a Free Quote</h1>
+        <p class="contact-subtitle">
+            Get a free, no-obligation quote for your TV wall mounting installation.<br>
+            Please fill out the form below, and we'll get back to you shortly.
+        </p>
+        
+        <form id="quoteForm" class="contact-form">
+            <!-- 1. КОНТАКТНІ ДАНІ -->
+            <section class="form-section">
+                <h2 class="section-title">Contact Information</h2>
+                
+                <div class="form-group contact-form-group">
+                    <label for="name" class="contact-label required">Your name</label>
+                    <input type="text" id="name" name="name" class="contact-input" required>
+                    <div class="error-message contact-error" id="name-error">Please enter your name</div>
+                </div>
+                
+                <div class="form-group contact-form-group">
+                    <label for="phone" class="contact-label required">Phone number</label>
+                    <input type="tel" id="phone" name="phone" class="contact-input" placeholder="(123) 456-7890" required>
+                    <div class="error-message contact-error" id="phone-error">Please enter a valid 10-digit phone number</div>
+                </div>
+                
+                <div class="form-group contact-form-group">
+                    <label for="address" class="contact-label required">Your address</label>
+                    <input type="text" id="address" name="address" class="contact-input" placeholder="Full address or postal code" required>
+                    <div class="contact-hint">Required for calculating service cost</div>
+                    <div class="error-message contact-error" id="address-error">Please enter your address or postal code</div>
+                </div>
+            </section>
+
+            <!-- 2. ДЕТАЛІ МОНТАЖУ -->
+            <section class="form-section">
+                <h2 class="section-title">Installation Details</h2>
+                
+                <!-- Бажані дата та час -->
+                <div class="form-group contact-form-group">
+                    <label for="datetime" class="contact-label required">Select a desired date and time</label>
+                    <input type="datetime-local" id="datetime" name="datetime" class="contact-input" required>
+                    <div class="error-message contact-error" id="datetime-error">Please select date and time</div>
+                </div>
+                
+                <!-- Більше одного TV? -->
+                <div class="form-group contact-form-group">
+                    <label class="contact-label required">More than one TV?</label>
+                    <div class="radio-group contact-radio-group">
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="multipleTVNo" name="multipleTV" value="No" class="contact-radio" checked>
+                            <label for="multipleTVNo" class="contact-radio-label">No (1 TV)</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="multipleTVYes" name="multipleTV" value="Yes" class="contact-radio">
+                            <label for="multipleTVYes" class="contact-radio-label">Yes</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Кількість TV (тільки для кількох TV) -->
+                <div class="form-group contact-form-group" id="numberOfTVsGroup" style="display: none;">
+                    <label for="additionalTVs" class="contact-label required">Number of TVs (2-5)</label>
+                    <select id="additionalTVs" name="additionalTVs" class="contact-select">
+                        <option value="">-- Select --</option>
+                        <option value="2">2 TVs</option>
+                        <option value="3">3 TVs</option>
+                        <option value="4">4 TVs</option>
+                        <option value="5">5 TVs</option>
+                    </select>
+                    <div class="error-message contact-error" id="additionalTVs-error">Please select number of TVs</div>
+                </div>
+                
+                <!-- КОНТЕЙНЕР ДЛЯ ВСІХ TV БЛОКІВ -->
+                <div id="allTVBlocksContainer">
+                    <!-- Тут будуть створюватись блоки для TV -->
+                </div>
+            </section>
+
+            <!-- 3. КЕРУВАННЯ КАБЕЛЯМИ -->
+            <section class="form-section">
+                <h2 class="section-title">Cable Management</h2>
+                
+                <div class="form-group contact-form-group">
+                    <label class="contact-label required">Cable management needed?</label>
+                    <div class="radio-group contact-radio-group">
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="cableYes" name="cableManagement" value="Yes" class="contact-radio">
+                            <label for="cableYes" class="contact-radio-label">Yes</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="cableNo" name="cableManagement" value="No" class="contact-radio" checked>
+                            <label for="cableNo" class="contact-radio-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Опції кабельного менеджменту -->
+                <div class="form-group contact-form-group conditional-field" id="cableOptionsGroup" style="display: none;">
+                    <label class="contact-label required">Select cable management option</label>
+                    <div class="radio-group contact-radio-group">
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="cableOutlet" name="cableOption" value="Add additional outlet" class="contact-radio">
+                            <label for="cableOutlet" class="contact-radio-label">Add additional outlet</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="cableLowVoltage" name="cableOption" value="Low-Voltage Drop" class="contact-radio">
+                            <label for="cableLowVoltage" class="contact-radio-label">Low-Voltage Drop</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="cablePowerKit" name="cableOption" value="Power Kit / Bridge-Style Power" class="contact-radio">
+                            <label for="cablePowerKit" class="contact-radio-label">Power Kit / Bridge-Style Power</label>
+                        </div>
+                    </div>
+                    <div class="error-message contact-error" id="cableOption-error">Please select cable management option</div>
+                </div>
+            </section>
+
+            <!-- 4. ДОДАТКОВІ ПОСЛУГИ -->
+            <section class="form-section">
+                <h2 class="section-title">Additional Services</h2>
+                
+                <div class="form-group contact-form-group">
+                    <label class="contact-label required">Additional services needed?</label>
+                    <div class="radio-group contact-radio-group">
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="servicesYes" name="additionalServices" value="Yes" class="contact-radio">
+                            <label for="servicesYes" class="contact-radio-label">Yes</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="servicesNo" name="additionalServices" value="No" class="contact-radio" checked>
+                            <label for="servicesNo" class="contact-radio-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Опції додаткових послуг -->
+                <div class="form-group contact-form-group conditional-field" id="servicesOptionsGroup" style="display: none;">
+                    <label class="contact-label">Select additional services (multiple choices allowed)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="serviceSoundbar" name="serviceSoundbar" value="Soundbar installation" class="contact-checkbox">
+                            <label for="serviceSoundbar" class="contact-checkbox-label">Soundbar installation</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="serviceGaming" name="serviceGaming" value="Gaming Console Mounting" class="contact-checkbox">
+                            <label for="serviceGaming" class="contact-checkbox-label">Gaming Console Mounting</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="serviceStand" name="serviceStand" value="Floating TV Stand Assembly" class="contact-checkbox">
+                            <label for="serviceStand" class="contact-checkbox-label">Floating TV Stand Assembly</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="serviceShelf" name="serviceShelf" value="Shelf and Mantel Installation" class="contact-checkbox">
+                            <label for="serviceShelf" class="contact-checkbox-label">Shelf and Mantel Installation</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Загальні питання -->
+            <section class="form-section">
+                <h2 class="section-title">Additional Questions</h2>
+                
+                <div class="form-group contact-form-group">
+                    <label class="contact-label required">Current TV needs to be taken down?</label>
+                    <div class="radio-group contact-radio-group">
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="takeDownYes" name="takeDown" value="Yes" class="contact-radio">
+                            <label for="takeDownYes" class="contact-radio-label">Yes</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="takeDownNo" name="takeDown" value="No" class="contact-radio" checked>
+                            <label for="takeDownNo" class="contact-radio-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group contact-form-group">
+                    <label class="contact-label required">Device setup needed?</label>
+                    <div class="radio-group contact-radio-group">
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="deviceSetupYes" name="deviceSetup" value="Yes" class="contact-radio">
+                            <label for="deviceSetupYes" class="contact-radio-label">Yes</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="deviceSetupNo" name="deviceSetup" value="No" class="contact-radio" checked>
+                            <label for="deviceSetupNo" class="contact-radio-label">No</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <button type="submit" id="submitBtn" class="btn contact-submit">Get Free Quote</button>
+        </form>
+        
+        <div class="success-message contact-success" id="successMessage">
+            <h3 class="contact-success-title">Thank you for your submission!</h3>
+            <p class="contact-success-text">We've received your request and will contact you shortly with a quote.</p>
+        </div>
+    </div>
+
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Додаємо початковий блок для одного TV при завантаженні сторінки
+        document.addEventListener('DOMContentLoaded', function() {
+            // Створюємо початковий блок для одного TV
+            const container = document.getElementById('allTVBlocksContainer');
+            container.innerHTML = '';
+            
+            const tvBlock = document.createElement('div');
+            tvBlock.className = 'tv-block';
+            tvBlock.innerHTML = `
+                <h3 class="tv-block-title">TV Details</h3>
+                
+                <!-- Розмір TV -->
+                <div class="form-group contact-form-group">
+                    <label for="tv1Size" class="contact-label required">TV size (inches)</label>
+                    <select id="tv1Size" name="tv1Size" class="contact-select" required>
+                        <option value="">-- Select size --</option>
+                        <option value="32">32"</option>
+                        <option value="40">40"</option>
+                        <option value="43">43"</option>
+                        <option value="50">50"</option>
+                        <option value="55">55"</option>
+                        <option value="65">65"</option>
+                        <option value="75">75"</option>
+                        <option value="85">85"</option>
+                        <option value="100">100"</option>
+                    </select>
+                    <div class="error-message contact-error" id="tv1Size-error">Please select TV size</div>
+                </div>
+                
+                <!-- Тип стіни -->
+                <div class="form-group contact-form-group">
+                    <label for="tv1WallType" class="contact-label required">Wall type</label>
+                    <select id="tv1WallType" name="tv1WallType" class="contact-select" required>
+                        <option value="">-- Select wall type --</option>
+                        <option value="Drywall">Drywall</option>
+                        <option value="Wooden">Wooden</option>
+                        <option value="Tile">Tile</option>
+                        <option value="Concrete">Concrete</option>
+                        <option value="Brick">Brick</option>
+                    </select>
+                    <div class="error-message contact-error" id="tv1WallType-error">Please select wall type</div>
+                </div>
+                
+                <!-- Над каміном? -->
+                <div class="form-group contact-form-group">
+                    <label class="contact-label required">Installation above fireplace?</label>
+                    <div class="radio-group contact-radio-group">
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="tv1FireplaceYes" name="tv1Fireplace" value="Yes" class="contact-radio">
+                            <label for="tv1FireplaceYes" class="contact-radio-label">Yes</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="tv1FireplaceNo" name="tv1Fireplace" value="No" class="contact-radio" checked>
+                            <label for="tv1FireplaceNo" class="contact-radio-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Маєте кронштейн? (YES за замовчуванням) -->
+                <div class="form-group contact-form-group">
+                    <label class="contact-label required">Do you already have a TV Mount?</label>
+                    <div class="radio-group contact-radio-group">
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="tv1HaveMountYes" name="tv1HaveMount" value="Yes" class="contact-radio" checked>
+                            <label for="tv1HaveMountYes" class="contact-radio-label">Yes</label>
+                        </div>
+                        <div class="radio-option contact-radio-option">
+                            <input type="radio" id="tv1HaveMountNo" name="tv1HaveMount" value="No" class="contact-radio">
+                            <label for="tv1HaveMountNo" class="contact-radio-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Тип кронштейна (якщо немає) -->
+                <div class="form-group contact-form-group conditional-field" id="tv1BracketTypeGroup" style="display: none;">
+                    <label for="tv1BracketType" class="contact-label required">Bracket type selection</label>
+                    <select id="tv1BracketType" name="tv1BracketType" class="contact-select">
+                        <option value="">-- Select bracket type --</option>
+                        <option value="Fixed">Fixed</option>
+                        <option value="Tilting Mount">Tilting Mount</option>
+                        <option value="Full Motion Mount">Full Motion Mount</option>
+                        <option value="Pull-Down">Pull-Down</option>
+                        <option value="Slim Fit / Frame (Low-Profile)">Slim Fit / Frame (Low-Profile)</option>
+                    </select>
+                    <div class="error-message contact-error" id="tv1BracketType-error">Please select bracket type</div>
+                </div>
+            `;
+            
+            container.appendChild(tvBlock);
+            
+            // Додаємо обробник для TV Mount
+            const tvMountRadios = tvBlock.querySelectorAll('input[name="tv1HaveMount"]');
+            tvMountRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const bracketTypeGroup = document.getElementById('tv1BracketTypeGroup');
+                    const bracketTypeSelect = document.getElementById('tv1BracketType');
+                    
+                    if (this.value === 'No') {
+                        bracketTypeGroup.style.display = 'block';
+                        bracketTypeSelect.required = true;
+                    } else {
+                        bracketTypeGroup.style.display = 'none';
+                        bracketTypeSelect.required = false;
+                        bracketTypeSelect.value = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
