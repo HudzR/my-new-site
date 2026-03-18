@@ -100,8 +100,8 @@ a:hover {
 .logo-link {
     display: block;
     /* 1. Робимо контейнер квадратним */
-    width: 100px;        /* Діаметр вашого круга */
-    height: 100px;       /* Повинно дорівнювати width */
+    width: 60px;        /* Діаметр вашого круга */
+    height: 60px;       /* Повинно дорівнювати width */
     
     /* 2. Робимо контейнер круглим (головна властивість) */
     border-radius: 50%; /* Основна магія */
@@ -139,7 +139,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: var(--primary-color);
 }
